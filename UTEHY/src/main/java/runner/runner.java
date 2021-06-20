@@ -8,9 +8,10 @@ import io.cucumber.junit.Cucumber;
 
 @CucumberOptions(features="src/test/resources/features",
         glue= {"step_definitions"},
-        tags = "@ngoaile",
+        //tags = "@ngoaile",
         plugin={"pretty","html:target/HTML/report.html"},
         publish = true
 )
 public class runner {
+
 }

@@ -4,7 +4,8 @@ Feature: Test function of  edit product
   Scenario: Do not enter the name
     Given I login to the admin page
     When Navigate to the product management page
-    And Click on the create button
+    And Click on the Edit button
+    And Enter book name with value ""
     And Enter img link with value "iMG LINK- Hướng Test"
     And Select the author
     And Select the publishing company
@@ -16,51 +17,33 @@ Feature: Test function of  edit product
   Scenario: Do not enter img link
     Given I login to the admin page
     When Navigate to the product management page
-    And Click on the create button
+    And Click on the Edit button
     And Enter book name with value "book name- Hướng Test"
+    And Enter img link with value ""
     And Select the author
     And Select the publishing company
     And Enter description with value "description- Hướng Test"
     Then I click on save button
     And I validate color of img textbox
-  @ngoaile
-  Scenario: Do not select the author
-    Given I login to the admin page
-    When Navigate to the product management page
-    And Click on the create button
-    And Enter book name with value "book name- Hướng Test"
-    And Enter img link with value "iMG LINK- Hướng Test"
-    And Select the publishing company
-    And Enter description with value "description- Hướng Test"
-    Then I click on save button
-    And I validate color of author combobox
-  @ngoaile
-  Scenario: Do not select the publishing company
-    Given I login to the admin page
-    When Navigate to the product management page
-    And Click on the create button
-    And Enter book name with value "book name- Hướng Test"
-    And Enter img link with value "IMG LINK- Hướng Test"
-    And Select the author
-    And Enter description with value "description- Hướng Test"
-    Then I click on save button
-    And I validate color of publish combobox
+
   @ngoaile
   Scenario: Do not enter the description
     Given I login to the admin page
     When Navigate to the product management page
-    And Click on the create button
+    And Click on the Edit button
     And Enter book name with value "book name- Hướng Test"
     And Enter img link with value "iMG LINK- Hướng Test"
     And Select the author
     And Select the publishing company
+    And Enter description with value ""
     Then I click on save button
     And I validate color of description combobox with "red"
   @ngoaile
   Scenario: Do not enter the name 2
     Given I login to the admin page
     When Navigate to the product management page
-    And Click on the create button
+    And Click on the Edit button
+    And Enter book name with value ""
     And Enter img link with value "iMG LINK- Hướng Test"
     And Select the author
     And Select the publishing company
@@ -77,7 +60,7 @@ Feature: Test function of  edit product
   Scenario Outline: Successfully added a new product
     Given I login to the admin page
     When Navigate to the product management page
-    And Click on the create button
+    And Click on the Edit button
     And Enter book name with value <string>
     And Enter img link with value <string1>
     And Select the author

@@ -36,12 +36,12 @@ Feature: login page test
     And I click on login button
     Then I validate the notification with value "<notification>"
     Examples:
-      | username                                                                                             | password                                 | notification                            |
+      | username                   | password                 | notification                            |
       # Tài khoản không tồn tại
-      | manh123a                                                                                             | manh123                                  | Tài khoản không tồn tại!                |
+      | manh123a                   | manh123                  | Tài khoản không tồn tại!                |
       # Mật khẩu sai
-      | manh                                                                                                 | manhxxx                                  | Mật khẩu không khớp!                    |
+      | manh                       | manhxxx                  | Mật khẩu không khớp!                    |
       # Tài khoản với độ rộng trên 50 kí tự
-      | 1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890 | manh123                                  | Tài khoản không được vượt quá 50 kí tự! |
+      | 12345678901234567890123670 | manh123                  | Tài khoản không được vượt quá 50 kí tự! |
       # Mật khẩu vượt quá 32 kí tự
-      | manh                                                                                                 | 1234567890123456789012345678901234567890 | Mật khảu không được vượt quá 32 kí tự!  |
+      | manh                       | 123456789012301234567890 | Mật khảu không được vượt quá 32 kí tự!  |
