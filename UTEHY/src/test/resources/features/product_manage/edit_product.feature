@@ -1,6 +1,7 @@
-Feature: Test function of  edit product
+@edit
+Feature: Test suite function of  edit product
 
-  @ngoaile
+  @alternative
   Scenario: Do not enter the name
     Given I login to the admin page
     When Navigate to the product management page
@@ -10,10 +11,10 @@ Feature: Test function of  edit product
     And Select the author
     And Select the publishing company
     And Enter description with value "description- Hướng Test"
-    Then I click on save button
+    Then I click on update button
     And I validate color of name textbox
 
-  @ngoaile
+  @alternative
   Scenario: Do not enter img link
     Given I login to the admin page
     When Navigate to the product management page
@@ -23,10 +24,10 @@ Feature: Test function of  edit product
     And Select the author
     And Select the publishing company
     And Enter description with value "description- Hướng Test"
-    Then I click on save button
+    Then I click on update button
     And I validate color of img textbox
 
-  @ngoaile
+  @alternative
   Scenario: Do not enter the description
     Given I login to the admin page
     When Navigate to the product management page
@@ -36,9 +37,10 @@ Feature: Test function of  edit product
     And Select the author
     And Select the publishing company
     And Enter description with value ""
-    Then I click on save button
+    Then I click on update button
     And I validate color of description combobox with "red"
-  @ngoaile
+
+  @alternative
   Scenario: Do not enter the name 2
     Given I login to the admin page
     When Navigate to the product management page
@@ -48,16 +50,16 @@ Feature: Test function of  edit product
     And Select the author
     And Select the publishing company
     And Enter description with value "description- Hướng Test"
-    And I click on save button
+    And I click on update button
     And I validate color of name textbox with "red"
     And Enter book name with value "book name- Hướng Test"
     And Clean text in descripton textbox
-    When I click on save button
+    When I click on update button
     And I validate color of description combobox with "red"
     And I validate color of name textbox with "black"
 
-  @thanhcong
-  Scenario Outline: Successfully added a new product
+  @alternative
+  Scenario Outline: Successfully edit a product
     Given I login to the admin page
     When Navigate to the product management page
     And Click on the Edit button
@@ -66,11 +68,11 @@ Feature: Test function of  edit product
     And Select the author
     And Select the publishing company
     And Enter description with value <string2>
-    Then I click on save button
+    Then I click on update button
     And Accept the alert
     And I validate the name of product with value <string>
     Examples:
-      | string  | string1 | string2             |
+      | string                   | string1                | string2                   |
       | "book name- Hướng Test1" | "iMG LINK- Hướng Test" | "description- Hướng Test" |
       | "book name- Hướng Test2" | "iMG LINK- Hướng Test" | "description- Hướng Test" |
 

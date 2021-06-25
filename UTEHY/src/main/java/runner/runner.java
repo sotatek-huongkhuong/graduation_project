@@ -8,8 +8,8 @@ import io.cucumber.junit.Cucumber;
 
 @CucumberOptions(features="src/test/resources/features",
         glue= {"step_definitions"},
-        //tags = "@ngoaile",
         plugin={"pretty","html:target/HTML/report.html"},
+        //tags = "@login or @create",
         publish = true
 )
 public class runner {

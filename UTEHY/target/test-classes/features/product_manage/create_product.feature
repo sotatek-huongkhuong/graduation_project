@@ -1,6 +1,7 @@
+@create
 Feature: Test function of  product manage
 
-@ngoaile
+  @alternative
   Scenario: Do not enter the name
     Given I login to the admin page
     When Navigate to the product management page
@@ -12,7 +13,8 @@ Feature: Test function of  product manage
     Then I click on save button
     And I validate color of name textbox
 
-  @ngoaile
+
+  @alternative
   Scenario: Do not enter img link
     Given I login to the admin page
     When Navigate to the product management page
@@ -23,7 +25,8 @@ Feature: Test function of  product manage
     And Enter description with value "description- Hướng Test"
     Then I click on save button
     And I validate color of img textbox
-  @ngoaile
+
+  @alternative
   Scenario: Do not select the author
     Given I login to the admin page
     When Navigate to the product management page
@@ -34,7 +37,8 @@ Feature: Test function of  product manage
     And Enter description with value "description- Hướng Test"
     Then I click on save button
     And I validate color of author combobox
-  @ngoaile
+
+  @alternative
   Scenario: Do not select the publishing company
     Given I login to the admin page
     When Navigate to the product management page
@@ -45,7 +49,8 @@ Feature: Test function of  product manage
     And Enter description with value "description- Hướng Test"
     Then I click on save button
     And I validate color of publish combobox
-  @ngoaile
+
+  @alternative
   Scenario: Do not enter the description
     Given I login to the admin page
     When Navigate to the product management page
@@ -56,7 +61,8 @@ Feature: Test function of  product manage
     And Select the publishing company
     Then I click on save button
     And I validate color of description combobox with "red"
-  @ngoaile
+
+  @alternative
   Scenario: Do not enter the name 2
     Given I login to the admin page
     When Navigate to the product management page
@@ -73,7 +79,7 @@ Feature: Test function of  product manage
     And I validate color of description combobox with "red"
     And I validate color of name textbox with "black"
 
-  @thanhcong
+  @basic
   Scenario Outline: Successfully added a new product
     Given I login to the admin page
     When Navigate to the product management page
@@ -87,7 +93,7 @@ Feature: Test function of  product manage
     And Accept the alert
     And I validate the name of product with value <string>
     Examples:
-      | string  | string1 | string2             |
+      | string                   | string1                | string2                   |
       | "book name- Hướng Test1" | "iMG LINK- Hướng Test" | "description- Hướng Test" |
       | "book name- Hướng Test2" | "iMG LINK- Hướng Test" | "description- Hướng Test" |
 

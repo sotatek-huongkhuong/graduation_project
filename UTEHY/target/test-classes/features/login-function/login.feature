@@ -2,7 +2,7 @@
 Feature: login page test
 
   # đăng nhập thành công với tài khoản và mật khẩu chính xác
-  @thanhcong
+  @basic
   Scenario: Successfully logged in with an existing account
     Given I navigate to admin page
     When I enter an admin account "manh"
@@ -12,7 +12,7 @@ Feature: login page test
     And check validate the name of account
 
     # Không nhập tài khoản
-  @ngoaile
+  @alternative
   Scenario: Do not enter username
     Given I navigate to admin page
     And I enter the password  "manh123"
@@ -20,7 +20,7 @@ Feature: login page test
     Then I validate the notification with value "Enter a valid username!"
 
         # Không nhập mật khẩu
-  @ngoaile
+  @alternative
   Scenario: Do not enter password
     Given I navigate to admin page
     And I enter an admin account "manh"
@@ -28,7 +28,7 @@ Feature: login page test
     Then I validate the notification with value "Enter a valid password!"
 
   # nhập tài khoản không tồn tại hoặc tài khoản tồn tại và mật khẩu sai
-  @ngoaile
+  @alternative
   Scenario Outline: Validate account and password
     Given I navigate to admin page
     When I enter an admin account "<username>"
